@@ -8,7 +8,7 @@ function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Simple Button pressed')}>
+        <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Simple Button pressed ')}>
           <Text style={styles.buttonText}>Hello World</Text>
         </TouchableOpacity>        
       </View>
