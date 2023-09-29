@@ -1,0 +1,10 @@
+{
+  "name": "newapp",
+  "displayName": "newapp",
+
+  "expo" : {
+    "sdkVersion": "49.0.0",
+    "name":"newapp"
+
+  }
+}
