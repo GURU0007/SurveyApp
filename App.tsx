@@ -1,38 +1,23 @@
-//import React, { useState } from 'react';
-import { SafeAreaView, View, StyleSheet, TouchableOpacity, Text,Alert } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Header from './Toolbars/Header';
+import Search from './Searchbar';
 
-function App() {
-  //const [message, setMessage] = useState('');
-
-
+export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Simple Button pressed ')}>
-          <Text style={styles.buttonText}>Hello World</Text>
-        </TouchableOpacity>        
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <Search />
+        <Header />
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor:'red',
-    padding: 10,
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: 'blue',
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#f5fffa',
   },
 });
-
-export default App;
