@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  HStack,
-  Text,
-  NativeBaseProvider,
-  VStack,
-  View
-} from 'native-base';
-import { Ionicons } from '@expo/vector-icons';
+import { HStack, Text, NativeBaseProvider, VStack, View } from 'native-base';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHome, faCircleInfo, faComment, faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   return (
@@ -15,41 +10,35 @@ function Header() {
         justifyContent="space-around"
         alignItems="center"
         bg="primary.500"
-        height="20"
+        height={20}
+        bottom={8}
         p={1}
       >
-        
         <HStack space={2} alignItems="center">
-          <Text>
-            <Ionicons name="mail" size={24} color="white" />
-          </Text>
-          <Text color="white">Contact</Text>
+          <FontAwesomeIcon icon={faHome} size={24} />
+          <Text color="white">Home</Text>
         </HStack>
         <HStack space={2} alignItems="center">
-          <Text>
-            <Ionicons name="information-circle" size={24} color="white" />
-          </Text>
+          <FontAwesomeIcon icon={faCircleInfo} size={24} />
           <Text color="white">About Us</Text>
         </HStack>
         <HStack space={2} alignItems="center">
-          <Text>
-            <Ionicons name="chatbubble-ellipses" size={24} color="white" />
-          </Text>
+          <FontAwesomeIcon icon={faComment} size={24}/>
           <Text color="white">Feedback</Text>
         </HStack>
         <HStack space={2} alignItems="center">
-          <Text>
-            <Ionicons name="person" size={24} color="white" />
-          </Text>
+          <FontAwesomeIcon icon={faUser} size={24}/>
           <Text color="white">Profile</Text>
         </HStack>
       </HStack>
-      <View position="absolute" 
-        bottom={0} 
-        left={0} 
-        right={0} 
-        height={5} // Adjust this value to set the height of the black bar
-        bg="black" />
+      <View
+        position="absolute"
+        bottom={0}
+        left={0}
+        right={0}
+        height={10} // Adjust this value to set the height of the black bar
+        bg="black"
+      />
     </VStack>
   );
 }

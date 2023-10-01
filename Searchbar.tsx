@@ -1,45 +1,30 @@
 import React, { useState } from 'react';
-import { Text,View,TouchableOpacity,Alert } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import {View, TouchableOpacity, Alert, TextInput } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = (query) => setSearchQuery(query);
-  function searchRec(){
-    Alert.alert('success')
+
+  function searchRec() {
+    Alert.alert('Success');
   }
+
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Searchbar
-        placeholder="Search"
-        onChangeText={onChangeSearch}
-        value={searchQuery}
-        style={{ margin: 20, borderRadius: 25 }}
-      />
-      
-      <TouchableOpacity 
-        onPress={searchRec}
-        style={{
-          backgroundColor: 'green',
-          paddingVertical: 5,
-          paddingHorizontal: 10,
-          borderRadius: 10,
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
-          elevation: 5,
-          width: 100, 
-          height: 50, 
-          left:140,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Text style={{ color: 'white' }}>Search</Text>
-      </TouchableOpacity>
-
+      <View style={{ flexDirection: 'row', alignItems: 'center', margin: 20, borderRadius: 25, backgroundColor: 'skyblue', paddingLeft: 10 }}>
+        <TextInput
+          placeholder="Search"
+          onChangeText={onChangeSearch}
+          value={searchQuery}
+          style={{ flex: 1 }}
+        />
+        <TouchableOpacity onPress={searchRec} style={{ padding: 10 }}>
+          <FontAwesomeIcon icon={faSearch} size={24} color="black" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
